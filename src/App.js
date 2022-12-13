@@ -9,6 +9,7 @@ import {Checkout} from './Components/Checkout'
 import {NavbarComponent} from './Components/Navbar'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container } from 'react-bootstrap';
+import chocStrawberry from './imgs/chocolate-covered-strawberry.jpg'
 
 
 function App() {
