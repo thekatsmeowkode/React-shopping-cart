@@ -21,7 +21,7 @@ export function Shop() {
             {productsArray.map((product) => {
             return (
             <Col key={product.id} align='center'>
-                <ItemCard product={product}></ItemCard>
+                <ItemCard product={product} itemName={product.name}></ItemCard>
             </Col>)})}
         </Row>
     </React.Fragment>)

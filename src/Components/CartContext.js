@@ -8,10 +8,16 @@ export const CartContext = createContext({
   delete1FromCart: () => {},
   deleteItemFromCart: () => {},
   getTotal: () => {},
+  getNumericItemQuantity: () => {}
 });
-
+ // {item: id, quantity: ''}
 export function CartMaker({ children }) {
   const [cartItems, setCartItems] = useState([]);
+
+  function getNumericItemQuantity(id) {
+    let itemQuantity = cartItems.find(item => item.id === id).quantity
+    return itemQuantity
+  }
 
   function getProductQuantity(id) {
     const ifQuantity =  cartItems.find((item) => {
@@ -75,6 +81,7 @@ export function CartMaker({ children }) {
     delete1FromCart,
     deleteItemFromCart,
     getTotal,
+    getNumericItemQuantity
   };
   return (
     <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>

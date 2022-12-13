@@ -2,6 +2,7 @@ import {Button, Container, Navbar} from 'react-bootstrap'
 import {useState, useContext} from 'react'
 import {CartContext} from './CartContext'
 import {Cart} from './Cart'
+import CardHeader from 'react-bootstrap/esm/CardHeader'
 
 export function NavbarComponent() {
     const cart = useContext(CartContext)
@@ -12,7 +13,7 @@ export function NavbarComponent() {
             <Navbar.Brand href='/'>Candy Shop</Navbar.Brand>
             <Navbar.Toggle />
             <Navbar.Collapse className='justify-content-end'>
-                <Cart itemCount={itemsCount} itemsCurrentlyInCart={cart.items}></Cart>
+                <Cart itemCount={itemsCount} itemsCurrentlyInCart={cart.items} ></Cart>
             </Navbar.Collapse>
         </Navbar>
     )

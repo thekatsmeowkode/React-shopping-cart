@@ -31,4 +31,9 @@ function getProductData(id) {
     return productData
 }
 
-export {productsArray, getProductData}
+function getProductName(id) {
+  let productName = productsArray.find(product => product.id === id).title
+  return productName
+}
+
+export {productsArray, getProductData, getProductName}
