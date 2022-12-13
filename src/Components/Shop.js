@@ -2,6 +2,7 @@ import React from 'react'
 import {Row, Col} from 'react-bootstrap'
 import {productsArray} from './ProductsStore.js'
 import stylesheet from '../App.css'
+import {ItemCard} from './ItemCards'
 // import ccs from '../imgs/chocolate-covered-strawberry.jpg'
 // import cc from '../imgs/chocolate-cup.jpg'
 // import ct from '../imgs/chocolate-turtle.jpg'
@@ -20,8 +21,7 @@ export function Shop() {
             {productsArray.map((product) => {
             return (
             <Col key={product.id} align='center'>
-            <img className='chocolate-image' src={product.image} alt={product.title}></img>
-                {product.title}
+                <ItemCard product={product}></ItemCard>
             </Col>)})}
         </Row>
     </React.Fragment>)

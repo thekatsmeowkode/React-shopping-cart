@@ -1,13 +1,18 @@
-import {Button, Container, Navbar, Modal} from 'react-bootstrap'
+import {Button, Container, Navbar} from 'react-bootstrap'
+import {useState, useContext} from 'react'
+import {CartContext} from './CartContext'
+import {Cart} from './Cart'
 
 export function NavbarComponent() {
+    const cart = useContext(CartContext)
+    const itemsCount = cart.items.reduce((sum, item) => sum + item.quantity, 0)
 
     return (
         <Navbar expand='sm'>
             <Navbar.Brand href='/'>Candy Shop</Navbar.Brand>
             <Navbar.Toggle />
             <Navbar.Collapse className='justify-content-end'>
-                <Button>Cart 0 Items</Button>
+                <Cart itemCount={itemsCount} itemsCurrentlyInCart={cart.items}></Cart>
             </Navbar.Collapse>
         </Navbar>
     )

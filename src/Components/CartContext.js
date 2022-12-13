@@ -14,25 +14,23 @@ export function CartMaker({ children }) {
   const [cartItems, setCartItems] = useState([]);
 
   function getProductQuantity(id) {
-    cartItems.find((item) => {
-      if (item.id === id) {
-        return item.quantity;
-      } else {
-        return 0;
-      }
-    });
+    const ifQuantity =  cartItems.find((item) => {
+        if (item.id === id) {
+          return item.quantity;}});
+   if (ifQuantity == undefined) {return 0} 
+   else {return ifQuantity}
   }
 
   function add1ToCart(id) {
     const quantity = getProductQuantity(id);
     if (quantity === 0) {
-      [...cartItems, { id: id, quantity: 1 }];
+      setCartItems([...cartItems, { id: id, quantity: 1 }])
     } else {
       setCartItems(
-        setCartItems.map((item) =>
+        cartItems.map((item) =>
           item.id === id
-            ? { ...products, quantity: product.quantity + 1 }
-            : product
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
         )
       );
     }
@@ -44,10 +42,10 @@ export function CartMaker({ children }) {
       deleteItemFromCart(id);
     } else {
       setCartItems(
-        setCartItems.map((item) =>
+        cartItems.map((item) =>
           item.id === id
-            ? { ...products, quantity: product.quantity - 1 }
-            : product
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
         )
       );
     }
