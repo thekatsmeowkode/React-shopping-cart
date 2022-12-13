@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { getProductName } from "./ProductsStore.js";
-import { Button, Offcanvas, Table } from "react-bootstrap";
+import { Button, Offcanvas, Table, Container } from "react-bootstrap";
 import {CartContext} from './CartContext'
 
 export function Cart(props) {
@@ -21,7 +21,7 @@ export function Cart(props) {
 
       <Offcanvas placement="end" show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+          <Offcanvas.Title>Cart</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Table striped bordered hover>
@@ -36,10 +36,12 @@ export function Cart(props) {
                 <tr key={item.id}>
                   <td >{cart.getNumericItemQuantity(item.id)}</td>
                   <td >{getProductName(item.id)}</td>
+                  <td > <Button onClick={() => cart.deleteItemFromCart(item.id)}>Delete</Button></td>
                 </tr>
               ))}
             </tbody>
           </Table>
+          <Container><p>{cart.getTotal()}</p></Container>
         </Offcanvas.Body>
       </Offcanvas>
     </React.Fragment>

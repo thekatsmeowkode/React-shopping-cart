@@ -11,7 +11,7 @@ export function ItemCard(props) {
     return (
         <Card>
             <Card.Body>
-                <Card.Img variant='top' src={item.image}/>
+                <Card.Img fluid='true' rounded="true" variant='top' src={item.image}/>
                 <Card.Title>{item.title}</Card.Title>
                 <Card.Text>${item.price}</Card.Text>
                 {itemQuantity > 0 ? 
