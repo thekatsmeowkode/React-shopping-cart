@@ -74,7 +74,7 @@ export function CartMaker({ children }) {
   }
 
   function emptyCart() {
-    alert("Don't you wish this shop was real?  I'm sorry to say it isn't.")
+    alert("Don't you wish this shop was real?  I'm sorry to say it isn't.  Your cart will empty when you click OK.")
     setCartItems([])
   }
 

@@ -16,13 +16,13 @@ export function Cart(props) {
 
   return (
     <React.Fragment>
-      <Button variant="primary" onClick={handleShow} className="header">
+      <Button variant="info" onClick={handleShow}>
         Cart {itemCount}
       </Button>
 
       <Offcanvas placement="end" show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Cart</Offcanvas.Title>
+          <Offcanvas.Title  bsPrefix="header">Cart</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Table striped bordered hover>

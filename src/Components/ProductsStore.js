@@ -12,7 +12,7 @@ import wcpc from '../imgs/white-chocolate-praline-cup.jpg'
 import wct from '../imgs/white-chocolate-truffle.jpg'
 
 const productsArray = [
-  { id: "1", title: "Chocolate Covered Strawberry", price: 2.49, image: ccs },
+  { id: "1", title: "Chocolate Strawberry", price: 2.49, image: ccs },
   { id: "2", title: "Chocolate Cup", price: 3.49 , image: cc},
   { id: "3", title: "Chocolate Sprinkle Truffle", price: 2.99, image: csc },
   { id: "4", title: "Chocolate Turtle", price: 3.49 , image: ct},
