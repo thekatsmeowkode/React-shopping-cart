@@ -4,7 +4,7 @@ import "../App.css";
 
 export function Home() {
   return (
-    <div
+    <div className='chocolate-background'
       style={{
         backgroundImage: `url(${chocolateBackground})`,
         height: "100vh",

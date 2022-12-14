@@ -18,18 +18,21 @@ export function NavbarComponent() {
         The Confectionary
       </Navbar.Brand>
       <Nav.Link
+        className="hover-link"
         style={{ fontSize: "16px", color: "white", marginLeft: "20px" }}
         href="/"
       >
         Home
       </Nav.Link>
       <Nav.Link
+        className="hover-link"
         style={{ fontSize: "16px", color: "white", marginLeft: "20px" }}
         href="/Shop"
       >
         Shop
       </Nav.Link>
       <Nav.Link
+        className="hover-link"
         style={{ fontSize: "16px", color: "white", marginLeft: "20px" }}
         href="/Checkout"
       >

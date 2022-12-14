@@ -1,15 +1,37 @@
-.card-images {
-  /* max-height:200px;
-  max-width:100%;
-  height:auto; */
+.chocolate-background {
+  display:relative;
 }
 
-.page-center
+.hover-link:hover {
+  color:teal;
+  background-color:teal
+}
+
+.about-page {
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  margin-top: 1%;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-bottom: 1%;
+}
+
+.page-center {
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-family:'Dancing Script', cursive;
+  font-size: 150px;
+  font-weight:700;
+  text-shadow: 0 0 3px #fff;
+  color:teal
+}
 
 .fade-in {
-  font-family: Arial;
-  font-size: 60px;
-  animation: fadeIn 5s;
+  animation: fadeIn 7s;
   -webkit-animation: fadeIn 5s;
   -moz-animation: fadeIn 5s;
   -o-animation: fadeIn 5s;

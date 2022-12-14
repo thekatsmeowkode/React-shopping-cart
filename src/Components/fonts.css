@@ -4,7 +4,14 @@
     font-family:'Dancing Script';
 }
 
+.header-large {
+    margin-top:10px;
+    font-size: 80px;
+    font-family:'Dancing Script'
+}
+
 .header {
+    margin-top:10px;
     font-size: 50px;
     font-family:'Dancing Script'
 }

@@ -22,7 +22,7 @@ export function Cart(props) {
 
       <Offcanvas placement="end" show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title  bsPrefix="header">Cart</Offcanvas.Title>
+          <Offcanvas.Title style={{fontSize: '50px'}} bsPrefix="header">Shopping Cart</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Table striped bordered hover>
@@ -39,7 +39,7 @@ export function Cart(props) {
                   <td>{getProductName(item.id)}</td>
                   <td>
                     {" "}
-                    <Button onClick={() => cart.deleteItemFromCart(item.id)}>
+                    <Button variant='danger' onClick={() => cart.deleteItemFromCart(item.id)}>
                       Delete
                     </Button>
                   </td>
