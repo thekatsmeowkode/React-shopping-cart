@@ -9,12 +9,12 @@ export function ItemCard(props) {
     const itemQuantity = cart.getProductQuantity(item.id)
 
     return (
-        <Card>
+        <Card style={{margin:'10px'}}>
             <Card.Body>
-                <Card.Img fluid='true' rounded="true" variant='top' src={item.image}/>
+                <Card.Img className='card-images' fluid='true' rounded="true" variant='top' src={item.image}/>
                 <Card.Title>{item.title}</Card.Title>
                 <Card.Text>${item.price}</Card.Text>
-                {itemQuantity > 0 ? 
+                {(itemQuantity > 0) ? 
                 <>
                     <Form as={Row}>
                         <Form.Label column='true' sm='6'>In Cart: {itemQuantity} </Form.Label>

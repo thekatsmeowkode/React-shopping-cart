@@ -1,7 +1,8 @@
 import React, { useState, useContext } from "react";
 import { getProductName } from "./ProductsStore.js";
 import { Button, Offcanvas, Table, Container } from "react-bootstrap";
-import {CartContext} from './CartContext'
+import { CartContext } from "./CartContext";
+import fonts from "./fonts.css";
 
 export function Cart(props) {
   const [show, setShow] = useState(false);
@@ -9,13 +10,13 @@ export function Cart(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const cart = useContext(CartContext)
+  const cart = useContext(CartContext);
   let itemCount = props.itemCount;
-  let itemsCurrentlyInCart = props.itemsCurrentlyInCart
+  let itemsCurrentlyInCart = props.itemsCurrentlyInCart;
 
   return (
     <React.Fragment>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="primary" onClick={handleShow} className="header">
         Cart {itemCount}
       </Button>
 
@@ -34,14 +35,22 @@ export function Cart(props) {
             <tbody>
               {itemsCurrentlyInCart.map((item) => (
                 <tr key={item.id}>
-                  <td >{cart.getNumericItemQuantity(item.id)}</td>
-                  <td >{getProductName(item.id)}</td>
-                  <td > <Button onClick={() => cart.deleteItemFromCart(item.id)}>Delete</Button></td>
+                  <td>{cart.getNumericItemQuantity(item.id)}</td>
+                  <td>{getProductName(item.id)}</td>
+                  <td>
+                    {" "}
+                    <Button onClick={() => cart.deleteItemFromCart(item.id)}>
+                      Delete
+                    </Button>
+                  </td>
                 </tr>
               ))}
             </tbody>
           </Table>
-          <Container><p>{cart.getTotal()}</p></Container>
+          <Container>
+            <p>Cart Total: {cart.getTotal()} </p>
+            <Button variant='info' onClick={() => {cart.emptyCart()}}>Check Out</Button>
+          </Container>
         </Offcanvas.Body>
       </Offcanvas>
     </React.Fragment>
