@@ -15,7 +15,7 @@ function App() {
   return (
     <React.Fragment>
       <CartMaker>
-        <Container>
+        {/* <Container> */}
           <NavbarComponent></NavbarComponent>
           <BrowserRouter>
             <Routes>
@@ -25,7 +25,7 @@ function App() {
               <Route path="/checkout" element={<Checkout />} />
             </Routes>
           </BrowserRouter>
-        </Container>
+        {/* </Container> */}
       </CartMaker>
     </React.Fragment>
   );

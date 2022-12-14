@@ -1,4 +1,4 @@
-import { productsArray, getProductData } from "./ProductsStore";
+import { getProductData } from "./ProductsStore";
 import { createContext, useState } from "react";
 
 export const CartContext = createContext({
@@ -10,7 +10,7 @@ export const CartContext = createContext({
   getTotal: () => {},
   getNumericItemQuantity: () => {}
 });
- // {item: id, quantity: ''}
+
 export function CartMaker({ children }) {
   const [cartItems, setCartItems] = useState([]);
 
